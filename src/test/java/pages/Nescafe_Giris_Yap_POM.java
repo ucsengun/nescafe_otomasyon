@@ -14,7 +14,7 @@ public class Nescafe_Giris_Yap_POM extends MyMethods {
     @FindBy(xpath = "//label[@for='menuitem3']")
     private WebElement profilIkonu;
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//ul[@class='register-menu active']//a[contains(text(),'Giriş yap')]")
     private WebElement girisYap;
 
     @FindBy(xpath = "")

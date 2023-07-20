@@ -17,13 +17,13 @@ public class Nescafe_Kayit_POM extends MyMethods {
     @FindBy(xpath = "//ul[@class='register-menu active']//a[contains(text(),'Kayıt ol')]")
     private WebElement kayitOlButonu;
 
-    @FindBy(css = "#gigya-textbox-32384114701464324")
+    @FindBy(xpath = "(//input[@id='gigya-textbox-32384114701464324'])[1]")
     private WebElement ad;
 
-    @FindBy()
+    @FindBy(xpath = "(//input[@id='gigya-textbox-56470341204781944'])[1]")
     private WebElement soyad;
 
-    @FindBy()
+    @FindBy(xpath = "(//select[@id='gigya-dropdown-70507658919696960'])[1]")
     private WebElement dogumTarihiGun;
 
     @FindBy()
@@ -51,7 +51,7 @@ public class Nescafe_Kayit_POM extends MyMethods {
     private WebElement nestleGrupHaberBulteni;
 
     @FindBy()
-    private WebElement uyeOlButonu
+    private WebElement uyeOlButonu;
 
     public WebElement getProfilIkonu() {
         return profilIkonu;
