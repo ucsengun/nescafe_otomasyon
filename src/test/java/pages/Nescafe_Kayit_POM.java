@@ -17,7 +17,7 @@ public class Nescafe_Kayit_POM extends MyMethods {
     @FindBy(xpath = "//ul[@class='register-menu active']//a[contains(text(),'Kayıt ol')]")
     private WebElement kayitOlButonu;
 
-    @FindBy(xpath = "(//input[@id='gigya-textbox-32384114701464324'])[1]")
+    @FindBy(xpath = "//input[@id='gigya-textbox-32384114701464324']")
     private WebElement ad;
 
     @FindBy(xpath = "(//input[@id='gigya-textbox-56470341204781944'])[1]")
@@ -26,31 +26,31 @@ public class Nescafe_Kayit_POM extends MyMethods {
     @FindBy(xpath = "(//select[@id='gigya-dropdown-70507658919696960'])[1]")
     private WebElement dogumTarihiGun;
 
-    @FindBy()
+    @FindBy(xpath = "")
     private WebElement dogumTarihiAy;
 
     @FindBy()
     private WebElement dogumTarihiYil;
 
-    @FindBy()
+    @FindBy(xpath = "//input[@id='gigya-textbox-7229776226914300' and @name='email']")
     private WebElement email;
 
-    @FindBy()
+    @FindBy( css= "")
     private WebElement sifre;
 
     @FindBy()
     private WebElement sifreOnayi;
 
-    @FindBy()
+    @FindBy(xpath = "//input[@name='preferences.terms.TRnescafe_RGtcandprivacy.isConsentGranted']")
     private WebElement aydinlatmaMetniveGizlilikPolitikası;
 
-    @FindBy()
+    @FindBy(xpath = "//label[@for='gigya-checkbox-29967629431485264']")
     private WebElement yurtdisiAktarimi;
 
-    @FindBy()
+    @FindBy(xpath = "//label[@for='gigya-checkbox-129959784605786700']")
     private WebElement nestleGrupHaberBulteni;
 
-    @FindBy()
+    @FindBy(xpath = "//input[@value='Üye ol']")
     private WebElement uyeOlButonu;
 
     public WebElement getProfilIkonu() {

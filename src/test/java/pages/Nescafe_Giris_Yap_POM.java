@@ -17,12 +17,12 @@ public class Nescafe_Giris_Yap_POM extends MyMethods {
     @FindBy(xpath = "//ul[@class='register-menu active']//a[contains(text(),'Giriş yap')]")
     private WebElement girisYap;
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//input[@name='email']")
     private WebElement email;
 
     @FindBy(xpath =" ")
     private WebElement sifre;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//input[@value='Giriş Yap']")
     private WebElement girisYapButonu;
 
     public WebElement getProfilIkonu() {
