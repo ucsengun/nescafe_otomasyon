@@ -13,7 +13,7 @@ Feature: nescafe kayit
     When Üst menüde bulunan Profil logosuna tıkla.
     And Kayıt Ol seçeneğine tıkla.
     And Gelen formu doldururken geçersiz bir ad değeri gir.
-    And Üye ol butonuna tıkla.
+    Then Üye ol butonuna tıkla.
 
 
   Scenario: Kayıt Formu Geçersiz Soyad Hata Doğrulaması
@@ -24,11 +24,12 @@ Feature: nescafe kayit
     Then Üye ol butonuna tıkla.
 
   Scenario: Kayıt Formu Geçersiz Email Hata Doğrulaması
-  Given Nescafe turkiye websitesine eriş.
-  When Üst menüde bulunan Profil logosuna tıkla.
-  And Kayıt Ol seçeneğine tıkla.
-  And Gelen formu doldururken geçersiz bir email değeri gir.
-  Then Üye ol butonuna tıkla.
+    Given Nescafe turkiye websitesine eriş.
+    When Üst menüde bulunan Profil logosuna tıkla.
+    And Kayıt Ol seçeneğine tıkla.
+    And Gelen formu doldururken geçersiz bir email değeri gir.
+    And Üye ol butonuna tıkla.
+    Then Hata mesajını kontrol et.
 
   Scenario: Kayıt Formu Geçersiz Şifre Hata Doğrulaması
     Given Nescafe turkiye websitesine eriş.

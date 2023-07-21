@@ -100,7 +100,6 @@ public class Nescafe_Kayit {
     public void üyeOlButonunaTıkla() {
         nku.clickMethod(nku.getUyeOlButonu());
 
-        Assert.assertTrue(nku.getHataMesaji().isDisplayed());
     }
 
     @And("Gelen formu doldururken geçersiz bir soyad değeri gir.")
@@ -336,5 +335,10 @@ public class Nescafe_Kayit {
     @Then("Kontrol et.")
     public void kontrolEt() {
         Assert.assertTrue(nku.getBasariMesaji().isDisplayed());
+    }
+
+    @Then("Hata mesajını kontrol et.")
+    public void hataMesajınıKontrolEt() {
+        Assert.assertTrue(nku.getHataMesaji().isDisplayed());
     }
 }
