@@ -17,28 +17,28 @@ public class Nescafe_Kayit_POM extends MyMethods {
     @FindBy(xpath = "//ul[@class='register-menu active']//a[contains(text(),'Kayıt ol')]")
     private WebElement kayitOlButonu;
 
-    @FindBy(xpath = "//input[@id='gigya-textbox-32384114701464324']")
+    @FindBy(xpath = "(//input[@name='profile.firstName'])[3]")
     private WebElement ad;
 
-    @FindBy(xpath = "(//input[@id='gigya-textbox-56470341204781944'])[1]")
+    @FindBy(xpath = "(//input[@name='profile.lastName'])[3]")
     private WebElement soyad;
 
-    @FindBy(xpath = "(//select[@id='gigya-dropdown-70507658919696960'])[1]")
+    @FindBy(xpath = "(//select[@name='profile.birthDay'])[3]")
     private WebElement dogumTarihiGun;
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "(//select[@name='profile.birthMonth'])[3]")
     private WebElement dogumTarihiAy;
 
-    @FindBy()
+    @FindBy(xpath = "(//select[@name='profile.birthYear'])[3]")
     private WebElement dogumTarihiYil;
 
-    @FindBy(xpath = "//input[@id='gigya-textbox-7229776226914300' and @name='email']")
+    @FindBy(xpath = "(//input[@name='profile.email'])[1]")
     private WebElement email;
 
-    @FindBy( css= "")
+    @FindBy(xpath = "(//input[@name='profile.password'])[1]")
     private WebElement sifre;
 
-    @FindBy()
+    @FindBy(xpath = "(//input[@name='profile.passwordRetype'])[1]")
     private WebElement sifreOnayi;
 
     @FindBy(xpath = "//input[@name='preferences.terms.TRnescafe_RGtcandprivacy.isConsentGranted']")
@@ -66,7 +66,7 @@ public class Nescafe_Kayit_POM extends MyMethods {
     }
 
     public WebElement getSoyad() {
-        return ad;
+        return soyad;
     }
 
     public WebElement getDogumTarihiGun() {

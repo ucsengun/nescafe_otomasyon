@@ -6,6 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.support.ui.Select;
 import pages.Nescafe_Kayit_POM;
 import utilities.DriverClass;
 
@@ -18,7 +19,7 @@ public class Nescafe_Kayit {
     @Given("Nescafe turkiye websitesine eriş.")
     public void nescafeTurkiyeWebsitesineEriş() {
         DriverClass.getDriver().get("https://www.nescafe.com/tr/");
-
+        DriverClass.getDriver().findElement(By.id("_evidon-accept-button")).click();
     }
 
     @When("Üst menüde bulunan Profil logosuna tıkla.")
@@ -38,6 +39,15 @@ public class Nescafe_Kayit {
 
         nku.sendKeysMethod(nku.getSoyad(), "abcd");
 
+        Select select = new Select(nku.getDogumTarihiGun());
+        select.selectByVisibleText("22");
+
+        Select select1 = new Select(nku.getDogumTarihiAy());
+        select.selectByVisibleText("06");
+
+        Select select2 = new Select(nku.getDogumTarihiYil());
+        select.selectByVisibleText("1977");
+
         nku.clickMethod(nku.getEmail());
         nku.sendKeysMethod(nku.getEmail(), "88888@gmail.com");
         nku.clickMethod(nku.getSifre());
@@ -47,19 +57,19 @@ public class Nescafe_Kayit {
 
         nku.clickMethod(nku.getAydinlatmaMetniveGizlilikPolitikası());
 
-        jse.executeScript("arguments[0].value = '88888';", nku.getAd());
+      //  jse.executeScript("arguments[0].value = '88888';", nku.getAd());
 
         // Soyad alanına geçersiz bir değer girme
-        jse.executeScript("arguments[0].value = 'abcd';", nku.getSoyad());
+      //  jse.executeScript("arguments[0].value = 'abcd';", nku.getSoyad());
 
         // E-posta alanına geçersiz bir değer girme
        // jse.executeScript("arguments[0].value = '88888@gmail.com';", driver.findElement(By.name("email")));
 
         // Şifre alanına geçersiz bir değer girme
-        jse.executeScript("arguments[0].value = 'abcde';", nku.getSifre());
+       // jse.executeScript("arguments[0].value = 'abcde';", nku.getSifre());
 
         // Şifre onayı alanına geçersiz bir değer girme
-        jse.executeScript("arguments[0].value = 'abcde';", nku.getSifreOnayi());
+       // jse.executeScript("arguments[0].value = 'abcde';", nku.getSifreOnayi());
 
         // Aydınlatma metni ve gizlilik politikasını kabul etme
         //jsExecutor.executeScript("arguments[0].click();", driver.findElement(By.name("acceptTerms")));
