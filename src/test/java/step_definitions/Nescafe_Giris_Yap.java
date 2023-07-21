@@ -3,6 +3,7 @@ package step_definitions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import pages.Nescafe_Giris_Yap_POM;
 import pages.Nescafe_Kayit_POM;
 import utilities.DriverClass;
@@ -26,7 +27,11 @@ public class Nescafe_Giris_Yap {
       //  jse.executeScript("arguments[0].value = 'abcd'", nky.getSifre());
 
 
-      //  jse.executeScript("arguments[0].click();", nky.getGirisYapButonu());
+        WebElement element = (WebElement) jse.executeScript("return document.getElementsByName('username')[0]");
+        element.sendKeys("test_username");
+
+
+        //  jse.executeScript("arguments[0].click();", nky.getGirisYapButonu());
         nky.clickMethod(nky.getGirisYapButonu());
     }
 

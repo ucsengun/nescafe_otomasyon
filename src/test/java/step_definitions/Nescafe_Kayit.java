@@ -18,6 +18,7 @@ public class Nescafe_Kayit {
     @Given("Nescafe turkiye websitesine eriş.")
     public void nescafeTurkiyeWebsitesineEriş() {
         DriverClass.getDriver().get("https://www.nescafe.com/tr/");
+
     }
 
     @When("Üst menüde bulunan Profil logosuna tıkla.")
