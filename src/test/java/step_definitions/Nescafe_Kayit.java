@@ -94,13 +94,7 @@ public class Nescafe_Kayit {
             Thread.sleep(3000);
         }
 
-        //nku.clickMethod(nku.getYurtdisiAktarimi());
         nku.clickMethod(nku.getNestleGrupHaberBulteni());
-
-      //  jse.executeScript("arguments[0].value = '88888';", nku.getAd());
-
-        // Soyad alanına geçersiz bir değer girme
-      //  jse.executeScript("arguments[0].value = 'abcd';", nku.getSoyad());
 
 
     }
@@ -111,77 +105,185 @@ public class Nescafe_Kayit {
     }
 
     @And("Gelen formu doldururken geçersiz bir soyad değeri gir.")
-    public void gelenFormuDoldururkenGeçersizBirSoyadDeğeriGir() {
-//        nku.sendKeysMethod(nku.getAd(), "88888");
-//
-//        nku.sendKeysMethod(nku.getSoyad(), "abcd");
-//
-//        Select select = new Select(nku.getDogumTarihiGun());
-//        select.selectByVisibleText("22");
-//
-//        Select select1 = new Select(nku.getDogumTarihiAy());
-//        select1.selectByVisibleText("06");
-//
-//        Select select2 = new Select(nku.getDogumTarihiYil());
-//        select2.selectByVisibleText("1977");
-//
-//
-//        nku.sendKeysMethod(nku.getEmail(), "88888@gmail.com");
-//        nku.sendKeysMethod((nku.getSifre()), "abcde");
-//        nku.sendKeysMethod(nku.getSifreOnayi(), "abcde");
-//
-//        nku.clickMethod(nku.getAydinlatmaMetniveGizlilikPolitikası());
-//        nku.clickMethod(nku.getYurtdisiAktarimi());
-//        nku.clickMethod(nku.getNestleGrupHaberBulteni());
+    public void gelenFormuDoldururkenGeçersizBirSoyadDeğeriGir() throws InterruptedException {
+        nku.sendKeysMethod(nku.getAd(), "ilhan");
+
+        nku.sendKeysMethod(nku.getSoyad(), "888888");
+
+        Select select = new Select(nku.getDogumTarihiGun());
+        select.selectByVisibleText("22");
+
+        Select select1 = new Select(nku.getDogumTarihiAy());
+        select1.selectByVisibleText("06");
+
+        Select select2 = new Select(nku.getDogumTarihiYil());
+        select2.selectByVisibleText("1977");
+
+
+        nku.sendKeysMethod(nku.getEmailKayit(), "88888@gmail.com");
+        // jse.executeScript("arguments[0].value = '88888@gmail.com';", nku.getEmailKayit());
+
+        nku.sendKeysMethod((nku.getSifreKayit()), "abcde");
+        nku.sendKeysMethod(nku.getSifreOnayi(), "abcde");
+
+
+        // nku.clickMethod(nku.getAydinlatmaMetniveGizlilikPolitikası());
+
+
+        ((JavascriptExecutor) DriverClass.getDriver()).executeScript("window.scrollBy(0, -250);");
+        System.out.println("Sayfa yukarı kaydırıldı.");
+
+        DriverClass.getDriverWait().until(
+                ExpectedConditions.visibilityOfElementLocated(
+                        By.cssSelector("#gigya-profile-form > section > div > div.cell.large-22.large-offset-2.xlarge-22.xlarge-offset-2 > div > h2")
+                )
+        );
+
+        List<WebElement> elements = DriverClass.getDriverWait().until(
+                webDriver -> webDriver.findElements(
+                        By.cssSelector("#gigya-profile-form > section > div > div.cell.small-24.large-20 > div:nth-child(1) > div")
+                )
+        );
+        System.out.println("Elementler bulundu.");
+
+        elements = elements.stream().filter(element -> {
+            System.out.println(element.getAttribute("class"));
+            return !element.getAttribute("class").contains("gigya-composite-control-metadata");
+        }).collect(Collectors.toList());
+
+
+        System.out.println("Elementler: " + elements.size() + " adet.");
+
+        for (WebElement element : elements) {
+
+            element.click();
+
+            Thread.sleep(3000);
+        }
+
+        nku.clickMethod(nku.getNestleGrupHaberBulteni());
+
     }
 
     @And("Gelen formu doldururken geçersiz bir email değeri gir.")
-    public void gelenFormuDoldururkenGeçersizBirEmailDeğeriGir() {
-//        nku.sendKeysMethod(nku.getAd(), "88888");
-//
-//        nku.sendKeysMethod(nku.getSoyad(), "abcd");
-//
-//        Select select = new Select(nku.getDogumTarihiGun());
-//        select.selectByVisibleText("22");
-//
-//        Select select1 = new Select(nku.getDogumTarihiAy());
-//        select1.selectByVisibleText("06");
-//
-//        Select select2 = new Select(nku.getDogumTarihiYil());
-//        select2.selectByVisibleText("1977");
-//
-//
-//        nku.sendKeysMethod(nku.getEmail(), "88888@gmail.com");
-//        nku.sendKeysMethod((nku.getSifre()), "abcde");
-//        nku.sendKeysMethod(nku.getSifreOnayi(), "abcde");
-//
-//        nku.clickMethod(nku.getAydinlatmaMetniveGizlilikPolitikası());
-//        nku.clickMethod(nku.getYurtdisiAktarimi());
-//        nku.clickMethod(nku.getNestleGrupHaberBulteni());
+    public void gelenFormuDoldururkenGeçersizBirEmailDeğeriGir() throws InterruptedException {
+        nku.sendKeysMethod(nku.getAd(), "Besim");
+
+        nku.sendKeysMethod(nku.getSoyad(), "Tibuk");
+
+        Select select = new Select(nku.getDogumTarihiGun());
+        select.selectByVisibleText("22");
+
+        Select select1 = new Select(nku.getDogumTarihiAy());
+        select1.selectByVisibleText("06");
+
+        Select select2 = new Select(nku.getDogumTarihiYil());
+        select2.selectByVisibleText("1977");
+
+
+        nku.sendKeysMethod(nku.getEmailKayit(), "7763wdw3dwdw8931");
+        // jse.executeScript("arguments[0].value = '88888@gmail.com';", nku.getEmailKayit());
+
+        nku.sendKeysMethod((nku.getSifreKayit()), "abcde");
+        nku.sendKeysMethod(nku.getSifreOnayi(), "abcde");
+
+
+        // nku.clickMethod(nku.getAydinlatmaMetniveGizlilikPolitikası());
+
+
+        ((JavascriptExecutor) DriverClass.getDriver()).executeScript("window.scrollBy(0, -250);");
+        System.out.println("Sayfa yukarı kaydırıldı.");
+
+        DriverClass.getDriverWait().until(
+                ExpectedConditions.visibilityOfElementLocated(
+                        By.cssSelector("#gigya-profile-form > section > div > div.cell.large-22.large-offset-2.xlarge-22.xlarge-offset-2 > div > h2")
+                )
+        );
+
+        List<WebElement> elements = DriverClass.getDriverWait().until(
+                webDriver -> webDriver.findElements(
+                        By.cssSelector("#gigya-profile-form > section > div > div.cell.small-24.large-20 > div:nth-child(1) > div")
+                )
+        );
+        System.out.println("Elementler bulundu.");
+
+        elements = elements.stream().filter(element -> {
+            System.out.println(element.getAttribute("class"));
+            return !element.getAttribute("class").contains("gigya-composite-control-metadata");
+        }).collect(Collectors.toList());
+
+
+        System.out.println("Elementler: " + elements.size() + " adet.");
+
+        for (WebElement element : elements) {
+
+            element.click();
+
+            Thread.sleep(3000);
+        }
+
+        nku.clickMethod(nku.getNestleGrupHaberBulteni());
+
     }
 
     @And("Gelen formu doldururken geçersiz bir şifre değeri gir.")
-    public void gelenFormuDoldururkenGeçersizBirŞifreDeğeriGir() {
-//        nku.sendKeysMethod(nku.getAd(), "88888");
-//
-//        nku.sendKeysMethod(nku.getSoyad(), "abcd");
-//
-//        Select select = new Select(nku.getDogumTarihiGun());
-//        select.selectByVisibleText("22");
-//
-//        Select select1 = new Select(nku.getDogumTarihiAy());
-//        select1.selectByVisibleText("06");
-//
-//        Select select2 = new Select(nku.getDogumTarihiYil());
-//        select2.selectByVisibleText("1977");
-//
-//
-//        nku.sendKeysMethod(nku.getEmail(), "88888@gmail.com");
-//        nku.sendKeysMethod((nku.getSifre()), "abcde");
-//        nku.sendKeysMethod(nku.getSifreOnayi(), "abcde");
-//
-//        nku.clickMethod(nku.getAydinlatmaMetniveGizlilikPolitikası());
-//        nku.clickMethod(nku.getYurtdisiAktarimi());
-//        nku.clickMethod(nku.getNestleGrupHaberBulteni());
+    public void gelenFormuDoldururkenGeçersizBirŞifreDeğeriGir() throws InterruptedException {
+        nku.sendKeysMethod(nku.getAd(), "88888");
+
+        nku.sendKeysMethod(nku.getSoyad(), "abcd");
+
+        Select select = new Select(nku.getDogumTarihiGun());
+        select.selectByVisibleText("22");
+
+        Select select1 = new Select(nku.getDogumTarihiAy());
+        select1.selectByVisibleText("06");
+
+        Select select2 = new Select(nku.getDogumTarihiYil());
+        select2.selectByVisibleText("1977");
+
+
+        nku.sendKeysMethod(nku.getEmailKayit(), "88888@gmail.com");
+        // jse.executeScript("arguments[0].value = '88888@gmail.com';", nku.getEmailKayit());
+
+        nku.sendKeysMethod((nku.getSifreKayit()), "1");
+        nku.sendKeysMethod(nku.getSifreOnayi(), "1");
+
+
+        // nku.clickMethod(nku.getAydinlatmaMetniveGizlilikPolitikası());
+
+
+        ((JavascriptExecutor) DriverClass.getDriver()).executeScript("window.scrollBy(0, -250);");
+        System.out.println("Sayfa yukarı kaydırıldı.");
+
+        DriverClass.getDriverWait().until(
+                ExpectedConditions.visibilityOfElementLocated(
+                        By.cssSelector("#gigya-profile-form > section > div > div.cell.large-22.large-offset-2.xlarge-22.xlarge-offset-2 > div > h2")
+                )
+        );
+
+        List<WebElement> elements = DriverClass.getDriverWait().until(
+                webDriver -> webDriver.findElements(
+                        By.cssSelector("#gigya-profile-form > section > div > div.cell.small-24.large-20 > div:nth-child(1) > div")
+                )
+        );
+        System.out.println("Elementler bulundu.");
+
+        elements = elements.stream().filter(element -> {
+            System.out.println(element.getAttribute("class"));
+            return !element.getAttribute("class").contains("gigya-composite-control-metadata");
+        }).collect(Collectors.toList());
+
+
+        System.out.println("Elementler: " + elements.size() + " adet.");
+
+        for (WebElement element : elements) {
+
+            element.click();
+
+            Thread.sleep(3000);
+        }
+
+        nku.clickMethod(nku.getNestleGrupHaberBulteni());
+
     }
 }
