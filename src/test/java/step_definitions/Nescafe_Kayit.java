@@ -276,4 +276,65 @@ public class Nescafe_Kayit {
         nku.clickMethod(nku.getNestleGrupHaberBulteni());
 
     }
+    @And("Gelen formu doldururken tüm değerleri geçerli bir şekilde doldur.")
+    public void gelenFormuDoldururkenTümDeğerleriGeçerliBirŞekildeDoldur() throws InterruptedException {
+        nku.sendKeysMethod(nku.getAd(), "Besim");
+
+        nku.sendKeysMethod(nku.getSoyad(), "Tibuk");
+
+        Select select = new Select(nku.getDogumTarihiGun());
+        select.selectByVisibleText("22");
+
+        Select select1 = new Select(nku.getDogumTarihiAy());
+        select1.selectByVisibleText("06");
+
+        Select select2 = new Select(nku.getDogumTarihiYil());
+        select2.selectByVisibleText("1977");
+
+
+        nku.sendKeysMethod(nku.getEmailKayit(), "abckamil@gmail.com");
+
+        nku.sendKeysMethod((nku.getSifreKayit()), "abcdefgh");
+        nku.sendKeysMethod(nku.getSifreOnayi(), "abcdefgh");
+
+
+
+        ((JavascriptExecutor) DriverClass.getDriver()).executeScript("window.scrollBy(0, -250);");
+        System.out.println("Sayfa yukarı kaydırıldı.");
+
+        DriverClass.getDriverWait().until(
+                ExpectedConditions.visibilityOfElementLocated(
+                        By.cssSelector("#gigya-profile-form > section > div > div.cell.large-22.large-offset-2.xlarge-22.xlarge-offset-2 > div > h2")
+                )
+        );
+
+        List<WebElement> elements = DriverClass.getDriverWait().until(
+                webDriver -> webDriver.findElements(
+                        By.cssSelector("#gigya-profile-form > section > div > div.cell.small-24.large-20 > div:nth-child(1) > div")
+                )
+        );
+        System.out.println("Elementler bulundu.");
+
+        elements = elements.stream().filter(element -> {
+            System.out.println(element.getAttribute("class"));
+            return !element.getAttribute("class").contains("gigya-composite-control-metadata");
+        }).collect(Collectors.toList());
+
+
+        System.out.println("Elementler: " + elements.size() + " adet.");
+
+        for (WebElement element : elements) {
+
+            element.click();
+
+            Thread.sleep(3000);
+        }
+
+        nku.clickMethod(nku.getNestleGrupHaberBulteni());
+    }
+
+    @Then("Kontrol et.")
+    public void kontrolEt() {
+        Assert.assertTrue(nku.getBasariMesaji().isDisplayed());
+    }
 }
