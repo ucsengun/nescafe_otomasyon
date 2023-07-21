@@ -20,18 +20,21 @@ public class Nescafe_Giris_Yap {
 
     @And("Gelen giriş sayfasını doldururken geçersiz bir email değeri gir.")
     public void gelenGirişSayfasınıDoldururkenGeçersizBirEmailDeğeriGir() {
-       // nky.clickMethod(nky.getEmail());
+      //  nky.clickMethod(nky.getEmail());
         jse.executeScript("arguments[0].value = 'abcd';", nky.getEmail());
        // nky.sendKeysMethod(nky.getEmail(), "abcd");
-        jse.executeScript("arguments[0].value = 'abcd'", nky.getSifre());
+      //  jse.executeScript("arguments[0].value = 'abcd'", nky.getSifre());
 
 
+      //  jse.executeScript("arguments[0].click();", nky.getGirisYapButonu());
+        nky.clickMethod(nky.getGirisYapButonu());
     }
 
 
     @Then("Giriş yap butonuna tıkla.")
     public void girişYapButonunaTıkla() {
-        nky.clickMethod(nky.getGirisYapButonu());
+        //jse.executeScript("arguments[0].click();", nky.getGirisYapButonu());
+        // nky.clickMethod(nky.getGirisYapButonu());
     }
 
     @And("Gelen giriş sayfasını doldururken geçersiz bir şifre değeri gir.")
