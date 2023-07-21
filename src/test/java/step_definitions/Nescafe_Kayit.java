@@ -52,7 +52,7 @@ public class Nescafe_Kayit {
         nku.sendKeysMethod(nku.getEmailKayit(), "88888@gmail.com");
         // jse.executeScript("arguments[0].value = '88888@gmail.com';", nku.getEmailKayit());
 
-        nku.sendKeysMethod((nku.getSifre()), "abcde");
+        nku.sendKeysMethod((nku.getSifreKayit()), "abcde");
         nku.sendKeysMethod(nku.getSifreOnayi(), "abcde");
 
         nku.clickMethod(nku.getAydinlatmaMetniveGizlilikPolitikası());
