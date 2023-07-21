@@ -41,13 +41,13 @@ public class Nescafe_Kayit_POM extends MyMethods {
     @FindBy(css = "input[placeholder='Şifreyi onaylayın *']")
     private WebElement sifreOnayi;
 
-    @FindBy(xpath = "//label[text()='preferences.TRnestle_RGtransferdata.isConsentGranted']")
+    @FindBy(xpath = "//label[@for='gigya-checkbox-16813710383689784']//span//a[@class='privacy-ploicy-link' and contains(@href,'nescafe')] ")
     private WebElement aydinlatmaMetniveGizlilikPolitikası;
 
-    @FindBy(xpath = "//input[@data-gigya-name='preferences.TRnestle_RGtransferdata.isConsentGranted' and @type='checkbox']")
+    @FindBy(css = "//input[@data-gigya-name='preferences.TRnestle_RGtransferdata.isConsentGranted' and @type='checkbox']")
     private WebElement yurtdisiAktarimi;
 
-    @FindBy(xpath = "//span[contains(@class, 'gigya-label-text') and contains(text(), 'Nestle Grup Şirketlerinin kampanyalarından, ürün ve hizmetlerinden haberdar olmak için elektronik ileti almak istiyorum.')]")
+    @FindBy(xpath = "//*[@id='gigya-profile-form']/section/div/div[7]/div[1]/div[3]")
     private WebElement nestleGrupHaberBulteni;
 
     @FindBy(xpath = "//input[@value='Üye ol']")
