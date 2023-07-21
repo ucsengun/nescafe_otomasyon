@@ -53,6 +53,9 @@ public class Nescafe_Kayit_POM extends MyMethods {
     @FindBy(xpath = "//input[@value='Üye ol']")
     private WebElement uyeOlButonu;
 
+    @FindBy(css= ".gigya-error-msg-active")
+    private WebElement hataMesaji;
+
     public WebElement getProfilIkonu() {
         return profilIkonu;
     }
@@ -106,5 +109,9 @@ public class Nescafe_Kayit_POM extends MyMethods {
 
     public WebElement getUyeOlButonu(){
         return uyeOlButonu;
+    }
+
+    public WebElement getHataMesaji(){
+        return hataMesaji;
     }
 }

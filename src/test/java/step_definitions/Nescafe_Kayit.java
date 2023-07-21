@@ -8,6 +8,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import pages.Nescafe_Kayit_POM;
 import utilities.DriverClass;
 
@@ -39,7 +40,7 @@ public class Nescafe_Kayit {
 
     @And("Gelen formu doldururken geçersiz bir ad değeri gir.")
     public void gelenFormuDoldururkenGeçersizBirAdDeğeriGir() throws InterruptedException {
-        nku.sendKeysMethod(nku.getAd(), "88888");
+        nku.sendKeysMethod(nku.getAd(), "8");
 
         nku.sendKeysMethod(nku.getSoyad(), "abcd");
 
@@ -56,8 +57,8 @@ public class Nescafe_Kayit {
         nku.sendKeysMethod(nku.getEmailKayit(), "88888@gmail.com");
         // jse.executeScript("arguments[0].value = '88888@gmail.com';", nku.getEmailKayit());
 
-        nku.sendKeysMethod((nku.getSifreKayit()), "abcde");
-        nku.sendKeysMethod(nku.getSifreOnayi(), "abcde");
+        nku.sendKeysMethod((nku.getSifreKayit()), "abcdefgh");
+        nku.sendKeysMethod(nku.getSifreOnayi(), "abcdefgh");
 
 
         // nku.clickMethod(nku.getAydinlatmaMetniveGizlilikPolitikası());
@@ -102,13 +103,15 @@ public class Nescafe_Kayit {
     @Then("Üye ol butonuna tıkla.")
     public void üyeOlButonunaTıkla() {
         nku.clickMethod(nku.getUyeOlButonu());
+
+        Assert.assertTrue(nku.getHataMesaji().isDisplayed());
     }
 
     @And("Gelen formu doldururken geçersiz bir soyad değeri gir.")
     public void gelenFormuDoldururkenGeçersizBirSoyadDeğeriGir() throws InterruptedException {
         nku.sendKeysMethod(nku.getAd(), "ilhan");
 
-        nku.sendKeysMethod(nku.getSoyad(), "888888");
+        nku.sendKeysMethod(nku.getSoyad(), "888?/8.8;8");
 
         Select select = new Select(nku.getDogumTarihiGun());
         select.selectByVisibleText("22");
@@ -123,8 +126,8 @@ public class Nescafe_Kayit {
         nku.sendKeysMethod(nku.getEmailKayit(), "88888@gmail.com");
         // jse.executeScript("arguments[0].value = '88888@gmail.com';", nku.getEmailKayit());
 
-        nku.sendKeysMethod((nku.getSifreKayit()), "abcde");
-        nku.sendKeysMethod(nku.getSifreOnayi(), "abcde");
+        nku.sendKeysMethod((nku.getSifreKayit()), "abcdefgh");
+        nku.sendKeysMethod(nku.getSifreOnayi(), "abcdefgh");
 
 
         // nku.clickMethod(nku.getAydinlatmaMetniveGizlilikPolitikası());
@@ -181,11 +184,11 @@ public class Nescafe_Kayit {
         select2.selectByVisibleText("1977");
 
 
-        nku.sendKeysMethod(nku.getEmailKayit(), "7763wdw3dwdw8931");
+        nku.sendKeysMethod(nku.getEmailKayit(), "7763wd?w3dwdw8931");
         // jse.executeScript("arguments[0].value = '88888@gmail.com';", nku.getEmailKayit());
 
-        nku.sendKeysMethod((nku.getSifreKayit()), "abcde");
-        nku.sendKeysMethod(nku.getSifreOnayi(), "abcde");
+        nku.sendKeysMethod((nku.getSifreKayit()), "abcdefgh");
+        nku.sendKeysMethod(nku.getSifreOnayi(), "abcdefgh");
 
 
         // nku.clickMethod(nku.getAydinlatmaMetniveGizlilikPolitikası());
@@ -228,9 +231,9 @@ public class Nescafe_Kayit {
 
     @And("Gelen formu doldururken geçersiz bir şifre değeri gir.")
     public void gelenFormuDoldururkenGeçersizBirŞifreDeğeriGir() throws InterruptedException {
-        nku.sendKeysMethod(nku.getAd(), "88888");
+        nku.sendKeysMethod(nku.getAd(), "leblebi");
 
-        nku.sendKeysMethod(nku.getSoyad(), "abcd");
+        nku.sendKeysMethod(nku.getSoyad(), "kafa");
 
         Select select = new Select(nku.getDogumTarihiGun());
         select.selectByVisibleText("22");
