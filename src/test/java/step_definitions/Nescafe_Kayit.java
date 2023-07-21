@@ -43,19 +43,19 @@ public class Nescafe_Kayit {
         select.selectByVisibleText("22");
 
         Select select1 = new Select(nku.getDogumTarihiAy());
-        select.selectByVisibleText("06");
+        select1.selectByVisibleText("06");
 
         Select select2 = new Select(nku.getDogumTarihiYil());
-        select.selectByVisibleText("1977");
+        select2.selectByVisibleText("1977");
 
-        nku.clickMethod(nku.getEmail());
+
         nku.sendKeysMethod(nku.getEmail(), "88888@gmail.com");
-        nku.clickMethod(nku.getSifre());
         nku.sendKeysMethod((nku.getSifre()), "abcde");
-        nku.clickMethod(nku.getSifreOnayi());
         nku.sendKeysMethod(nku.getSifreOnayi(), "abcde");
 
         nku.clickMethod(nku.getAydinlatmaMetniveGizlilikPolitikası());
+        nku.clickMethod(nku.getYurtdisiAktarimi());
+        nku.clickMethod(nku.getNestleGrupHaberBulteni());
 
       //  jse.executeScript("arguments[0].value = '88888';", nku.getAd());
 
@@ -83,15 +83,76 @@ public class Nescafe_Kayit {
 
     @And("Gelen formu doldururken geçersiz bir soyad değeri gir.")
     public void gelenFormuDoldururkenGeçersizBirSoyadDeğeriGir() {
-        
+//        nku.sendKeysMethod(nku.getAd(), "88888");
+//
+//        nku.sendKeysMethod(nku.getSoyad(), "abcd");
+//
+//        Select select = new Select(nku.getDogumTarihiGun());
+//        select.selectByVisibleText("22");
+//
+//        Select select1 = new Select(nku.getDogumTarihiAy());
+//        select1.selectByVisibleText("06");
+//
+//        Select select2 = new Select(nku.getDogumTarihiYil());
+//        select2.selectByVisibleText("1977");
+//
+//
+//        nku.sendKeysMethod(nku.getEmail(), "88888@gmail.com");
+//        nku.sendKeysMethod((nku.getSifre()), "abcde");
+//        nku.sendKeysMethod(nku.getSifreOnayi(), "abcde");
+//
+//        nku.clickMethod(nku.getAydinlatmaMetniveGizlilikPolitikası());
+//        nku.clickMethod(nku.getYurtdisiAktarimi());
+//        nku.clickMethod(nku.getNestleGrupHaberBulteni());
     }
 
     @And("Gelen formu doldururken geçersiz bir email değeri gir.")
     public void gelenFormuDoldururkenGeçersizBirEmailDeğeriGir() {
-        
+//        nku.sendKeysMethod(nku.getAd(), "88888");
+//
+//        nku.sendKeysMethod(nku.getSoyad(), "abcd");
+//
+//        Select select = new Select(nku.getDogumTarihiGun());
+//        select.selectByVisibleText("22");
+//
+//        Select select1 = new Select(nku.getDogumTarihiAy());
+//        select1.selectByVisibleText("06");
+//
+//        Select select2 = new Select(nku.getDogumTarihiYil());
+//        select2.selectByVisibleText("1977");
+//
+//
+//        nku.sendKeysMethod(nku.getEmail(), "88888@gmail.com");
+//        nku.sendKeysMethod((nku.getSifre()), "abcde");
+//        nku.sendKeysMethod(nku.getSifreOnayi(), "abcde");
+//
+//        nku.clickMethod(nku.getAydinlatmaMetniveGizlilikPolitikası());
+//        nku.clickMethod(nku.getYurtdisiAktarimi());
+//        nku.clickMethod(nku.getNestleGrupHaberBulteni());
     }
 
     @And("Gelen formu doldururken geçersiz bir şifre değeri gir.")
     public void gelenFormuDoldururkenGeçersizBirŞifreDeğeriGir() {
+//        nku.sendKeysMethod(nku.getAd(), "88888");
+//
+//        nku.sendKeysMethod(nku.getSoyad(), "abcd");
+//
+//        Select select = new Select(nku.getDogumTarihiGun());
+//        select.selectByVisibleText("22");
+//
+//        Select select1 = new Select(nku.getDogumTarihiAy());
+//        select1.selectByVisibleText("06");
+//
+//        Select select2 = new Select(nku.getDogumTarihiYil());
+//        select2.selectByVisibleText("1977");
+//
+//
+//        nku.sendKeysMethod(nku.getEmail(), "88888@gmail.com");
+//        nku.sendKeysMethod((nku.getSifre()), "abcde");
+//        nku.sendKeysMethod(nku.getSifreOnayi(), "abcde");
+//
+//        nku.clickMethod(nku.getAydinlatmaMetniveGizlilikPolitikası());
+//        nku.clickMethod(nku.getYurtdisiAktarimi());
+//        nku.clickMethod(nku.getNestleGrupHaberBulteni());
     }
 }
