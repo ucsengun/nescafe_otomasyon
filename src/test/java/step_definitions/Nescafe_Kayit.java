@@ -40,7 +40,7 @@ public class Nescafe_Kayit {
 
     @And("Gelen formu doldururken geçersiz bir ad değeri gir.")
     public void gelenFormuDoldururkenGeçersizBirAdDeğeriGir() throws InterruptedException {
-        nku.sendKeysMethod(nku.getAd(), "6");
+        nku.sendKeysMethod(nku.getAd(), "?");
 
         nku.sendKeysMethod(nku.getSoyad(), "sssllll");
 
@@ -88,7 +88,7 @@ public class Nescafe_Kayit {
 
             element.click();
 
-            Thread.sleep(3000);
+          //  Thread.sleep(3000);
         }
 
         nku.clickMethod(nku.getNestleGrupHaberBulteni());

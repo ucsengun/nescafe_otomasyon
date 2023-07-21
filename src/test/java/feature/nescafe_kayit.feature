@@ -13,7 +13,8 @@ Feature: nescafe kayit
     When Üst menüde bulunan Profil logosuna tıkla.
     And Kayıt Ol seçeneğine tıkla.
     And Gelen formu doldururken geçersiz bir ad değeri gir.
-    Then Üye ol butonuna tıkla.
+    And Üye ol butonuna tıkla.
+
 
   Scenario: Kayıt Formu Geçersiz Soyad Hata Doğrulaması
     Given Nescafe turkiye websitesine eriş.
