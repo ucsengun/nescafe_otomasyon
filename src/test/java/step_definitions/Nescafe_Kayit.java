@@ -49,7 +49,9 @@ public class Nescafe_Kayit {
         select2.selectByVisibleText("1977");
 
 
-        nku.sendKeysMethod(nku.getEmail(), "88888@gmail.com");
+        nku.sendKeysMethod(nku.getEmailKayit(), "88888@gmail.com");
+        // jse.executeScript("arguments[0].value = '88888@gmail.com';", nku.getEmailKayit());
+
         nku.sendKeysMethod((nku.getSifre()), "abcde");
         nku.sendKeysMethod(nku.getSifreOnayi(), "abcde");
 

@@ -32,13 +32,13 @@ public class Nescafe_Kayit_POM extends MyMethods {
     @FindBy(xpath = "(//select[@name='profile.birthYear'])[3]")
     private WebElement dogumTarihiYil;
 
-    @FindBy(xpath = "(//input[@data-gigya-name='email'])")
-    private WebElement email;
+    @FindBy(xpath = "(//input[@name='email'])[3]")
+    private WebElement emailKayit;
 
-    @FindBy(xpath = "(//input[@name='profile.password'])[1]")
+    @FindBy(xpath = "(//input[@name='password'])[3]")
     private WebElement sifre;
 
-    @FindBy(xpath = "(//input[@name='profile.passwordRetype'])[1]")
+    @FindBy(xpath = "(//input[@name='passwordRetype'])[3]")
     private WebElement sifreOnayi;
 
     @FindBy(xpath = "//input[@name='preferences.terms.TRnescafe_RGtcandprivacy.isConsentGranted']")
@@ -80,8 +80,8 @@ public class Nescafe_Kayit_POM extends MyMethods {
         return dogumTarihiYil;
     }
 
-    public WebElement getEmail() {
-        return email;
+    public WebElement getEmailKayit() {
+        return emailKayit;
     }
 
     public WebElement getSifre(){
