@@ -56,7 +56,7 @@ public class Nescafe_Kayit_POM extends MyMethods {
     @FindBy(css= ".gigya-error-msg-active")
     private WebElement hataMesaji;
 
-    @FindBy(css= "#gigya-resend-verification-code-form .gigya-label-text")
+    @FindBy(css = "#gigya-resend-verification-code-form > section > div > div.cell.small-24.large-14.large-offset-5.xlarge-14.xlarge-offset-5 > div > label")
     private WebElement basariMesaji;
 
     public WebElement getProfilIkonu() {

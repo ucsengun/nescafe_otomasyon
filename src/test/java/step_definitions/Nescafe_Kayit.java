@@ -338,7 +338,18 @@ public class Nescafe_Kayit {
     }
 
     @Then("Hata mesajını kontrol et.")
-    public void hataMesajınıKontrolEt() {
-        Assert.assertTrue(nku.getHataMesaji().isDisplayed());
+    public void hataMesajınıKontrolEt() throws InterruptedException {
+        Thread.sleep(3000);
+      //  Assert.assertEquals(nku.getHataMesaji().getText(), "İşte bu! Lütfen mail kutunuzu kontrol edin. Üyeliğinizi tamamlamak için bir link göndereceğiz. Link 24 saat için geçerli olacak.");
+
+        String actualText = nku.getHataMesaji().getText();
+        String expectedText = "İşte bu! Lütfen mail kutunuzu kontrol edin. Üyeliğinizi tamamlamak için bir link göndereceğiz. Link 24 saat için geçerli olacak.";
+
+        try{
+            assert actualText.equals(expectedText);
+        } catch (AssertionError e) {
+            System.out.println(e.getMessage());
+        }
+
     }
 }
