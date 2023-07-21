@@ -6,9 +6,13 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import pages.Nescafe_Kayit_POM;
 import utilities.DriverClass;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 
 public class Nescafe_Kayit {
@@ -34,7 +38,7 @@ public class Nescafe_Kayit {
 
 
     @And("Gelen formu doldururken geçersiz bir ad değeri gir.")
-    public void gelenFormuDoldururkenGeçersizBirAdDeğeriGir() {
+    public void gelenFormuDoldururkenGeçersizBirAdDeğeriGir() throws InterruptedException {
         nku.sendKeysMethod(nku.getAd(), "88888");
 
         nku.sendKeysMethod(nku.getSoyad(), "abcd");
@@ -56,17 +60,41 @@ public class Nescafe_Kayit {
         nku.sendKeysMethod(nku.getSifreOnayi(), "abcde");
 
 
-         nku.clickMethod(nku.getAydinlatmaMetniveGizlilikPolitikası());
         // nku.clickMethod(nku.getAydinlatmaMetniveGizlilikPolitikası());
-         // WebElement el = nku.getAydinlatmaMetniveGizlilikPolitikası();
-       // Actions actions = new Actions(DriverClass.getDriver());
 
 
-        //Actions action = new Actions(DriverClass.getDriver());
-        // action.moveByOffset(clickX, clickY).click().build().perform();
-        //actions.moveToElement().click().build().perform();
+        ((JavascriptExecutor) DriverClass.getDriver()).executeScript("window.scrollBy(0, -250);");
+        System.out.println("Sayfa yukarı kaydırıldı.");
 
-        nku.clickMethod(nku.getYurtdisiAktarimi());
+        DriverClass.getDriverWait().until(
+                ExpectedConditions.visibilityOfElementLocated(
+                        By.cssSelector("#gigya-profile-form > section > div > div.cell.large-22.large-offset-2.xlarge-22.xlarge-offset-2 > div > h2")
+                )
+        );
+
+        List<WebElement> elements = DriverClass.getDriverWait().until(
+                webDriver -> webDriver.findElements(
+                        By.cssSelector("#gigya-profile-form > section > div > div.cell.small-24.large-20 > div:nth-child(1) > div")
+                )
+        );
+        System.out.println("Elementler bulundu.");
+
+        elements = elements.stream().filter(element -> {
+            System.out.println(element.getAttribute("class"));
+            return !element.getAttribute("class").contains("gigya-composite-control-metadata");
+        }).collect(Collectors.toList());
+
+
+        System.out.println("Elementler: " + elements.size() + " adet.");
+
+        for (WebElement element : elements) {
+
+            element.click();
+
+            Thread.sleep(3000);
+        }
+
+        //nku.clickMethod(nku.getYurtdisiAktarimi());
         nku.clickMethod(nku.getNestleGrupHaberBulteni());
 
       //  jse.executeScript("arguments[0].value = '88888';", nku.getAd());
@@ -74,17 +102,6 @@ public class Nescafe_Kayit {
         // Soyad alanına geçersiz bir değer girme
       //  jse.executeScript("arguments[0].value = 'abcd';", nku.getSoyad());
 
-        // E-posta alanına geçersiz bir değer girme
-       // jse.executeScript("arguments[0].value = '88888@gmail.com';", driver.findElement(By.name("email")));
-
-        // Şifre alanına geçersiz bir değer girme
-       // jse.executeScript("arguments[0].value = 'abcde';", nku.getSifre());
-
-        // Şifre onayı alanına geçersiz bir değer girme
-       // jse.executeScript("arguments[0].value = 'abcde';", nku.getSifreOnayi());
-
-        // Aydınlatma metni ve gizlilik politikasını kabul etme
-        //jsExecutor.executeScript("arguments[0].click();", driver.findElement(By.name("acceptTerms")));
 
     }
 

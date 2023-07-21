@@ -6,10 +6,16 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+import java.time.temporal.ChronoUnit;
 
 public class DriverClass {
     private static ThreadLocal<WebDriver> threadDriver = new ThreadLocal<>();
     private static ThreadLocal<String> threadDriverName = new ThreadLocal<>();
+
+    private static ThreadLocal<WebDriverWait> threadDriverWait = new ThreadLocal<>();
 
     public static WebDriver getDriver() {
         if (threadDriver.get()==null) {
@@ -20,15 +26,21 @@ public class DriverClass {
 
             switch (threadDriverName.get()) {
                 case "firefox":
-                    threadDriver.set(new FirefoxDriver());
+                    FirefoxDriver Driver = new FirefoxDriver();
+                    threadDriver.set(Driver);
+                    threadDriverWait.set(new WebDriverWait(Driver, Duration.of(10, ChronoUnit.SECONDS)));
                     threadDriver.get().manage().window().maximize();
                     break;
                 case "safari":
-                    threadDriver.set(new SafariDriver());
+                    SafariDriver Driver2 = new SafariDriver();
+                    threadDriver.set(Driver2);
+                    threadDriverWait.set(new WebDriverWait(Driver2, Duration.of(10, ChronoUnit.SECONDS)));
                     threadDriver.get().manage().window().maximize();
                     break;
                 case "edge":
-                    threadDriver.set(new EdgeDriver());
+                    EdgeDriver Driver3 = new EdgeDriver();
+                    threadDriver.set(Driver3);
+                    threadDriverWait.set(new WebDriverWait(Driver3, Duration.of(10, ChronoUnit.SECONDS)));
                     threadDriver.get().manage().window().maximize();
                     break;
                 default:
@@ -40,13 +52,18 @@ public class DriverClass {
                     options.addArguments("--disable-scroll-bounce");
 
                     options.addArguments("--remote-allow-origins=*"); // To solve the error with Chrome v111
-                    threadDriver.set(new ChromeDriver(options));
+                    ChromeDriver Driver4 = new ChromeDriver(options);
+                    threadDriver.set(Driver4);
+                    threadDriverWait.set(new WebDriverWait(Driver4, Duration.of(10, ChronoUnit.SECONDS)));
                     threadDriver.get().manage().window().maximize();
             }
         }
         return threadDriver.get();
     }
 
+    public static WebDriverWait getDriverWait(){
+        return threadDriverWait.get();
+    }
     public static void quitDriver(){
         try {
             Thread.sleep(3000);
