@@ -35,10 +35,10 @@ public class Nescafe_Kayit_POM extends MyMethods {
     @FindBy(xpath = "(//input[@name='email'])[3]")
     private WebElement emailKayit;
 
-    @FindBy(xpath = "(//input[@name='password'])[3]")
+    @FindBy(css = "input[placeholder='Şifreni gir *']")
     private WebElement sifreKayit;
 
-    @FindBy(xpath = "(//input[@name='passwordRetype'])[3]")
+    @FindBy(css = "input[placeholder='Şifreyi onaylayın *']")
     private WebElement sifreOnayi;
 
     @FindBy(xpath = "//label[text()='preferences.TRnestle_RGtransferdata.isConsentGranted']")
