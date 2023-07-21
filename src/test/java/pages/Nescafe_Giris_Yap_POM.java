@@ -17,10 +17,10 @@ public class Nescafe_Giris_Yap_POM extends MyMethods {
     @FindBy(xpath = "//ul[@class='register-menu active']//a[contains(text(),'Giriş yap')]")
     private WebElement girisYap;
 
-    @FindBy(xpath = "//input[@name='email']")
+    @FindBy(xpath = "//*[@id=\"gigya-loginID-51322072682240980\"]")
     private WebElement email;
 
-    @FindBy(xpath =" ")
+    @FindBy(xpath ="//input[@id='gigya-password-43351943385770020']")
     private WebElement sifre;
     @FindBy(xpath = "//input[@value='Giriş Yap']")
     private WebElement girisYapButonu;

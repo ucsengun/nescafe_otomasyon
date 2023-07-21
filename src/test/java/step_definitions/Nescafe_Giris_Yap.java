@@ -1,6 +1,7 @@
 package step_definitions;
 
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
 import org.openqa.selenium.JavascriptExecutor;
 import pages.Nescafe_Giris_Yap_POM;
 import pages.Nescafe_Kayit_POM;
@@ -19,10 +20,36 @@ public class Nescafe_Giris_Yap {
 
     @And("Gelen giriş sayfasını doldururken geçersiz bir email değeri gir.")
     public void gelenGirişSayfasınıDoldururkenGeçersizBirEmailDeğeriGir() {
-        nky.clickMethod(nky.getEmail());
-        nky.sendKeysMethod(nky.getEmail(), "abcd");
-        jse.executeScript("arguments[0].click()", nky.getEmail());
+       // nky.clickMethod(nky.getEmail());
+        jse.executeScript("arguments[0].value = 'abcd';", nky.getEmail());
+       // nky.sendKeysMethod(nky.getEmail(), "abcd");
+        jse.executeScript("arguments[0].value = 'abcd'", nky.getSifre());
 
 
+    }
+
+
+    @Then("Giriş yap butonuna tıkla.")
+    public void girişYapButonunaTıkla() {
+        nky.clickMethod(nky.getGirisYapButonu());
+    }
+
+    @And("Gelen giriş sayfasını doldururken geçersiz bir şifre değeri gir.")
+    public void gelenGirişSayfasınıDoldururkenGeçersizBirŞifreDeğeriGir() {
+        
+    }
+
+    @And("Gelen giriş sayfasını doldururken email kısmını boş bırak.")
+    public void gelenGirişSayfasınıDoldururkenEmailKısmınıBoşBırak() {
+        
+    }
+
+    @And("Gelen giriş sayfasını doldururken şifre kısmını boş bırak.")
+    public void gelenGirişSayfasınıDoldururkenŞifreKısmınıBoşBırak() {
+        
+    }
+
+    @And("Gelen giriş sayfasını doldururken tüm değerleri uygun bir şekilde gir.")
+    public void gelenGirişSayfasınıDoldururkenTümDeğerleriUygunBirŞekildeGir() {
     }
 }
