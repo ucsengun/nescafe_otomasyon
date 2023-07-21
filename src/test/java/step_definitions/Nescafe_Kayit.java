@@ -40,28 +40,24 @@ public class Nescafe_Kayit {
 
     @And("Gelen formu doldururken geçersiz bir ad değeri gir.")
     public void gelenFormuDoldururkenGeçersizBirAdDeğeriGir() throws InterruptedException {
-        nku.sendKeysMethod(nku.getAd(), "8");
+        nku.sendKeysMethod(nku.getAd(), "6");
 
-        nku.sendKeysMethod(nku.getSoyad(), "abcd");
+        nku.sendKeysMethod(nku.getSoyad(), "sssllll");
 
         Select select = new Select(nku.getDogumTarihiGun());
-        select.selectByVisibleText("22");
+        select.selectByVisibleText("10");
 
         Select select1 = new Select(nku.getDogumTarihiAy());
-        select1.selectByVisibleText("06");
+        select1.selectByVisibleText("04");
 
         Select select2 = new Select(nku.getDogumTarihiYil());
-        select2.selectByVisibleText("1977");
+        select2.selectByVisibleText("2001");
 
 
-        nku.sendKeysMethod(nku.getEmailKayit(), "88888@gmail.com");
-        // jse.executeScript("arguments[0].value = '88888@gmail.com';", nku.getEmailKayit());
+        nku.sendKeysMethod(nku.getEmailKayit(), "sssss@gmail.com");
 
         nku.sendKeysMethod((nku.getSifreKayit()), "abcdefgh");
         nku.sendKeysMethod(nku.getSifreOnayi(), "abcdefgh");
-
-
-        // nku.clickMethod(nku.getAydinlatmaMetniveGizlilikPolitikası());
 
 
         ((JavascriptExecutor) DriverClass.getDriver()).executeScript("window.scrollBy(0, -250);");
@@ -124,13 +120,10 @@ public class Nescafe_Kayit {
 
 
         nku.sendKeysMethod(nku.getEmailKayit(), "88888@gmail.com");
-        // jse.executeScript("arguments[0].value = '88888@gmail.com';", nku.getEmailKayit());
 
         nku.sendKeysMethod((nku.getSifreKayit()), "abcdefgh");
         nku.sendKeysMethod(nku.getSifreOnayi(), "abcdefgh");
 
-
-        // nku.clickMethod(nku.getAydinlatmaMetniveGizlilikPolitikası());
 
 
         ((JavascriptExecutor) DriverClass.getDriver()).executeScript("window.scrollBy(0, -250);");
@@ -185,13 +178,10 @@ public class Nescafe_Kayit {
 
 
         nku.sendKeysMethod(nku.getEmailKayit(), "7763wd?w3dwdw8931");
-        // jse.executeScript("arguments[0].value = '88888@gmail.com';", nku.getEmailKayit());
 
         nku.sendKeysMethod((nku.getSifreKayit()), "abcdefgh");
         nku.sendKeysMethod(nku.getSifreOnayi(), "abcdefgh");
 
-
-        // nku.clickMethod(nku.getAydinlatmaMetniveGizlilikPolitikası());
 
 
         ((JavascriptExecutor) DriverClass.getDriver()).executeScript("window.scrollBy(0, -250);");
@@ -246,13 +236,10 @@ public class Nescafe_Kayit {
 
 
         nku.sendKeysMethod(nku.getEmailKayit(), "88888@gmail.com");
-        // jse.executeScript("arguments[0].value = '88888@gmail.com';", nku.getEmailKayit());
 
         nku.sendKeysMethod((nku.getSifreKayit()), "1");
         nku.sendKeysMethod(nku.getSifreOnayi(), "1");
 
-
-        // nku.clickMethod(nku.getAydinlatmaMetniveGizlilikPolitikası());
 
 
         ((JavascriptExecutor) DriverClass.getDriver()).executeScript("window.scrollBy(0, -250);");
