@@ -154,7 +154,7 @@ public class Nescafe_Kayit {
 
             element.click();
 
-            Thread.sleep(3000);
+          //  Thread.sleep(3000);
         }
 
         nku.clickMethod(nku.getNestleGrupHaberBulteni());
@@ -212,7 +212,7 @@ public class Nescafe_Kayit {
 
             element.click();
 
-            Thread.sleep(3000);
+          //  Thread.sleep(3000);
         }
 
         nku.clickMethod(nku.getNestleGrupHaberBulteni());
@@ -270,7 +270,7 @@ public class Nescafe_Kayit {
 
             element.click();
 
-            Thread.sleep(3000);
+           // Thread.sleep(3000);
         }
 
         nku.clickMethod(nku.getNestleGrupHaberBulteni());
@@ -327,7 +327,7 @@ public class Nescafe_Kayit {
 
             element.click();
 
-            Thread.sleep(3000);
+           // Thread.sleep(3000);
         }
 
         nku.clickMethod(nku.getNestleGrupHaberBulteni());
