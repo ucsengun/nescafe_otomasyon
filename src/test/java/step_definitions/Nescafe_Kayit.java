@@ -4,9 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import pages.Nescafe_Kayit_POM;
@@ -58,10 +56,15 @@ public class Nescafe_Kayit {
         nku.sendKeysMethod(nku.getSifreOnayi(), "abcde");
 
 
+         nku.clickMethod(nku.getAydinlatmaMetniveGizlilikPolitikası());
         // nku.clickMethod(nku.getAydinlatmaMetniveGizlilikPolitikası());
-        WebElement checkbox = nku.getAydinlatmaMetniveGizlilikPolitikası();
-        Actions actions = new Actions(DriverClass.getDriver());
-        actions.moveToElement(checkbox).click().build().perform();
+         // WebElement el = nku.getAydinlatmaMetniveGizlilikPolitikası();
+       // Actions actions = new Actions(DriverClass.getDriver());
+
+
+        //Actions action = new Actions(DriverClass.getDriver());
+        // action.moveByOffset(clickX, clickY).click().build().perform();
+        //actions.moveToElement().click().build().perform();
 
         nku.clickMethod(nku.getYurtdisiAktarimi());
         nku.clickMethod(nku.getNestleGrupHaberBulteni());
