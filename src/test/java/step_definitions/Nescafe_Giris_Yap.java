@@ -25,7 +25,7 @@ public class Nescafe_Giris_Yap {
         nky.waitUntilVisible(nky.getEmail());
         jse.executeScript("arguments[0].value = 'bu alan';", nky.getEmail());
         nky.waitUntilVisible(nky.getSifre());
-        jse.executeScript("arguments[0].value = '999999';", nky.getSifre());
+        jse.executeScript("arguments[0].value = 'abcdefgh';", nky.getSifre());
 
 
 
@@ -55,7 +55,7 @@ public class Nescafe_Giris_Yap {
         jse.executeScript("arguments[0].value = ' ';", nky.getEmail());
 
         nky.waitUntilVisible(nky.getSifre());
-        jse.executeScript("arguments[0].value = '999999';", nky.getSifre());
+        jse.executeScript("arguments[0].value = 'abcdefgh';", nky.getSifre());
 
 
     }
@@ -63,7 +63,7 @@ public class Nescafe_Giris_Yap {
     @And("Gelen giriş sayfasını doldururken şifre kısmını boş bırak.")
     public void gelenGirişSayfasınıDoldururkenŞifreKısmınıBoşBırak() {
         nky.waitUntilVisible(nky.getEmail());
-        jse.executeScript("arguments[0].value = 'abcd@gmail.com';", nky.getEmail());
+        jse.executeScript("arguments[0].value = 'abckamil@gmail.com';", nky.getEmail());
 
         nky.waitUntilVisible(nky.getSifre());
         jse.executeScript("arguments[0].value = '';", nky.getSifre());
