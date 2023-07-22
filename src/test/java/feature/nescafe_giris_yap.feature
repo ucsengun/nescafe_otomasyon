@@ -6,6 +6,8 @@ Feature: nescafe giriş yap
     And Üye Girişi seçeneğine tıkla.
     And Gelen giriş sayfasını doldururken geçersiz bir email değeri gir.
     And Giriş yap butonuna tıkla.
+    Then Geçersiz email hata mesajını kontrol et.
+
 
   Scenario: Üye Girişi Geçersiz Şifre Hata Doğrulaması
     Given Nescafe turkiye websitesine eriş.

@@ -31,6 +31,8 @@ public class Nescafe_Giris_Yap_POM extends MyMethods {
     @FindBy(xpath = "//span[@data-bound-to='loginID'][normalize-space()='Bu alan zorunlu']")
     private WebElement emailBosBirakilamazHatasi;
 
+    @FindBy(css = "#gigya-profile-form > section.grid-container.gigya-form-wrapper-mobile > div > div:nth-child(4) > div > div > div")
+    private WebElement emailGecersizHatasi;
     public WebElement getProfilIkonu() {
         return profilIkonu;
     }
@@ -56,5 +58,9 @@ public class Nescafe_Giris_Yap_POM extends MyMethods {
 
     public WebElement getEmailBosBirakilamazHatasi() {
         return emailBosBirakilamazHatasi;
+    }
+
+    public WebElement getEmailGecersizHatasi(){
+        return emailGecersizHatasi;
     }
 }

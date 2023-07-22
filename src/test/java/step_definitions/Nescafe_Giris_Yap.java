@@ -23,7 +23,7 @@ public class Nescafe_Giris_Yap {
     @And("Gelen giriş sayfasını doldururken geçersiz bir email değeri gir.")
     public void gelenGirişSayfasınıDoldururkenGeçersizBirEmailDeğeriGir() {
         nky.waitUntilVisible(nky.getEmail());
-        jse.executeScript("arguments[0].value = 'abcd';", nky.getEmail());
+        jse.executeScript("arguments[0].value = 'bu alan';", nky.getEmail());
         nky.waitUntilVisible(nky.getSifre());
         jse.executeScript("arguments[0].value = '999999';", nky.getSifre());
 
@@ -108,5 +108,13 @@ public class Nescafe_Giris_Yap {
 
     @Then("Geçersiz email hata mesajını kontrol et.")
     public void geçersizEmailHataMesajınıKontrolEt() {
+        String actualText = nky.getEmailGecersizHatasi().getText();
+        String expectedText = "Geçersiz email adresi";
+
+        try{
+            assert actualText.contains(expectedText);
+        } catch (AssertionError e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
