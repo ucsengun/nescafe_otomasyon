@@ -25,6 +25,12 @@ public class Nescafe_Giris_Yap_POM extends MyMethods {
     @FindBy(xpath = "//input[@value='Giriş Yap']")
     private WebElement girisYapButonu;
 
+    @FindBy(xpath = "//span[@data-bound-to='password'][normalize-space()='Bu alan zorunlu']")
+    private WebElement sifreBosBirakilamazHatasi;
+
+    @FindBy(xpath = "//span[@data-bound-to='loginID'][normalize-space()='Bu alan zorunlu']")
+    private WebElement emailBosBirakilamazHatasi;
+
     public WebElement getProfilIkonu() {
         return profilIkonu;
     }
@@ -42,5 +48,13 @@ public class Nescafe_Giris_Yap_POM extends MyMethods {
 
     public WebElement getGirisYapButonu(){
         return girisYapButonu;
+    }
+
+    public WebElement getSifreBosBirakilamazHatasi() {
+        return sifreBosBirakilamazHatasi;
+    }
+
+    public WebElement getEmailBosBirakilamazHatasi() {
+        return emailBosBirakilamazHatasi;
     }
 }

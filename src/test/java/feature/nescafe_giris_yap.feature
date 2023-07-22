@@ -19,14 +19,16 @@ Feature: nescafe giriş yap
     When Üst menüde bulunan Profil logosuna tıkla.
     And Üye Girişi seçeneğine tıkla.
     And Gelen giriş sayfasını doldururken email kısmını boş bırak.
-    Then Giriş yap butonuna tıkla.
+    And Giriş yap butonuna tıkla.
+    Then
 
   Scenario: Üye Girişi Şifre Kısmı Boş Bırakma Hata Doğrulaması
     Given Nescafe turkiye websitesine eriş.
     When Üst menüde bulunan Profil logosuna tıkla.
     And Üye Girişi seçeneğine tıkla.
     And Gelen giriş sayfasını doldururken şifre kısmını boş bırak.
-    Then Giriş yap butonuna tıkla.
+    And Giriş yap butonuna tıkla.
+    Then
 
   Scenario: Üye Girişi Tamamen Doldurulduğunda Başarılı Girişin Doğrulaması
     Given Nescafe turkiye websitesine eriş.
