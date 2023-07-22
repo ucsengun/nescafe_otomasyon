@@ -234,7 +234,7 @@ public class Nescafe_Kayit {
         select2.selectByVisibleText("1977");
 
 
-        nku.sendKeysMethod(nku.getEmailKayit(), "88888@gmail.com");
+        nku.sendKeysMethod(nku.getEmailKayit(), "99999@gmail.com");
 
         nku.sendKeysMethod((nku.getSifreKayit()), "1");
         nku.sendKeysMethod(nku.getSifreOnayi(), "1");
