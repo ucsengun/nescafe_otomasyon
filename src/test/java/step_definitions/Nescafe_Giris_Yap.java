@@ -41,7 +41,7 @@ public class Nescafe_Giris_Yap {
     @And("Gelen giriş sayfasını doldururken geçersiz bir şifre değeri gir.")
     public void gelenGirişSayfasınıDoldururkenGeçersizBirŞifreDeğeriGir() {
         nky.waitUntilVisible(nky.getEmail());
-        jse.executeScript("arguments[0].value = 'abcd@gmail.com';", nky.getEmail());
+        jse.executeScript("arguments[0].value = 'abcbesim@gmail.com';", nky.getEmail());
 
         nky.waitUntilVisible(nky.getSifre());
         jse.executeScript("arguments[0].value = '9';", nky.getSifre());
@@ -63,7 +63,7 @@ public class Nescafe_Giris_Yap {
     @And("Gelen giriş sayfasını doldururken şifre kısmını boş bırak.")
     public void gelenGirişSayfasınıDoldururkenŞifreKısmınıBoşBırak() {
         nky.waitUntilVisible(nky.getEmail());
-        jse.executeScript("arguments[0].value = 'abckamil@gmail.com';", nky.getEmail());
+        jse.executeScript("arguments[0].value = 'abcbesim@gmail.com';", nky.getEmail());
 
         nky.waitUntilVisible(nky.getSifre());
         jse.executeScript("arguments[0].value = '';", nky.getSifre());
@@ -74,10 +74,10 @@ public class Nescafe_Giris_Yap {
     @And("Gelen giriş sayfasını doldururken tüm değerleri uygun bir şekilde gir.")
     public void gelenGirişSayfasınıDoldururkenTümDeğerleriUygunBirŞekildeGir() {
         nky.waitUntilVisible(nky.getEmail());
-        jse.executeScript("arguments[0].value = 'utkucan910gmail.com';", nky.getEmail());
+        jse.executeScript("arguments[0].value = 'abcbesim@gmail.com';", nky.getEmail());
 
         nky.waitUntilVisible(nky.getSifre());
-        jse.executeScript("arguments[0].value = '99999999';", nky.getSifre());
+        jse.executeScript("arguments[0].value = 'abcdefgh';", nky.getSifre());
 
 
     }
