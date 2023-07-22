@@ -53,7 +53,7 @@ public class Nescafe_Kayit_POM extends MyMethods {
     @FindBy(xpath = "//input[@value='Üye ol']")
     private WebElement uyeOlButonu;
 
-    @FindBy(css= ".gigya-error-msg-active")
+    @FindBy(xpath= "//span[@role='alert']")
     private WebElement hataMesaji;
 
     @FindBy(css = "#gigya-resend-verification-code-form > section > div > div.cell.small-24.large-14.large-offset-5.xlarge-14.xlarge-offset-5 > div > label")
