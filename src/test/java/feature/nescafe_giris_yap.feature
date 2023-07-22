@@ -5,7 +5,7 @@ Feature: nescafe giriş yap
     When Üst menüde bulunan Profil logosuna tıkla.
     And Üye Girişi seçeneğine tıkla.
     And Gelen giriş sayfasını doldururken geçersiz bir email değeri gir.
-    Then Giriş yap butonuna tıkla.
+    And Giriş yap butonuna tıkla.
 
   Scenario: Üye Girişi Geçersiz Şifre Hata Doğrulaması
     Given Nescafe turkiye websitesine eriş.
@@ -20,7 +20,7 @@ Feature: nescafe giriş yap
     And Üye Girişi seçeneğine tıkla.
     And Gelen giriş sayfasını doldururken email kısmını boş bırak.
     And Giriş yap butonuna tıkla.
-    Then
+    Then Email boş bırakılamaz hatasını kontrol et.
 
   Scenario: Üye Girişi Şifre Kısmı Boş Bırakma Hata Doğrulaması
     Given Nescafe turkiye websitesine eriş.
@@ -28,7 +28,7 @@ Feature: nescafe giriş yap
     And Üye Girişi seçeneğine tıkla.
     And Gelen giriş sayfasını doldururken şifre kısmını boş bırak.
     And Giriş yap butonuna tıkla.
-    Then
+    Then Şifre boş bırakılamaz hatasını kontrol et.
 
   Scenario: Üye Girişi Tamamen Doldurulduğunda Başarılı Girişin Doğrulaması
     Given Nescafe turkiye websitesine eriş.

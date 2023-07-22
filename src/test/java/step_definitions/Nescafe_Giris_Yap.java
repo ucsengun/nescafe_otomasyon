@@ -66,7 +66,7 @@ public class Nescafe_Giris_Yap {
         jse.executeScript("arguments[0].value = 'abcd@gmail.com';", nky.getEmail());
 
         nky.waitUntilVisible(nky.getSifre());
-        jse.executeScript("arguments[0].value = ' ';", nky.getSifre());
+        jse.executeScript("arguments[0].value = '';", nky.getSifre());
 
 
     }
@@ -80,5 +80,33 @@ public class Nescafe_Giris_Yap {
         jse.executeScript("arguments[0].value = '99999999';", nky.getSifre());
 
 
+    }
+
+    @Then("Email boş bırakılamaz hatasını kontrol et.")
+    public void emailBoşBırakılamazHatasınıKontrolEt() {
+        String actualText = nky.getEmailBosBirakilamazHatasi().getText();
+        String expectedText = "Bu alan zorunlu";
+
+        try{
+            assert actualText.equals(expectedText);
+        } catch (AssertionError e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @Then("Şifre boş bırakılamaz hatasını kontrol et.")
+    public void şifreBoşBırakılamazHatasınıKontrolEt() {
+        String actualText = nky.getSifreBosBirakilamazHatasi().getText();
+        String expectedText = "Bu alan zorunlu";
+
+        try{
+            assert actualText.equals(expectedText);
+        } catch (AssertionError e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @Then("Geçersiz email hata mesajını kontrol et.")
+    public void geçersizEmailHataMesajınıKontrolEt() {
     }
 }
