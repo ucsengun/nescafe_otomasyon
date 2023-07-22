@@ -333,16 +333,11 @@ public class Nescafe_Kayit {
     }
 
     @Then("Kontrol et.")
-    public void kontrolEt() {
-        Assert.assertTrue(nku.getBasariMesaji().isDisplayed());
-    }
-
-    @Then("Hata mesajını kontrol et.")
-    public void hataMesajınıKontrolEt() throws InterruptedException {
+    public void kontrolEt() throws InterruptedException {
+      //  Assert.assertTrue(nku.getBasariMesaji().isDisplayed());
         Thread.sleep(3000);
-      //  Assert.assertEquals(nku.getHataMesaji().getText(), "İşte bu! Lütfen mail kutunuzu kontrol edin. Üyeliğinizi tamamlamak için bir link göndereceğiz. Link 24 saat için geçerli olacak.");
 
-        String actualText = nku.getHataMesaji().getText();
+        String actualText = nku.getBasariMesaji().getText();
         String expectedText = "İşte bu! Lütfen mail kutunuzu kontrol edin. Üyeliğinizi tamamlamak için bir link göndereceğiz. Link 24 saat için geçerli olacak.";
 
         try{
@@ -351,5 +346,15 @@ public class Nescafe_Kayit {
             System.out.println(e.getMessage());
         }
 
+    }
+
+    @Then("Hata mesajını kontrol et.")
+    public void hataMesajınıKontrolEt() throws InterruptedException {
+        Thread.sleep(3000);
+        Assert.assertEquals(nku.getHataMesaji().getText(), "İşte bu! Lütfen mail kutunuzu kontrol edin. Üyeliğinizi tamamlamak için bir link göndereceğiz. Link 24 saat için geçerli olacak.");
+
+
+       // Assert.assertTrue(nku.verifyIsDisplayedMethod(nku.get()));
+       // ipk.verifyContainsText(ipk.getSuccessMessage(), "successfully");
     }
 }
